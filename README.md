@@ -1,4 +1,4 @@
-# Algoritmalar ve Kodlar
+# Otobüs Rezervasyon Sistemi
  
  Senaryo: Otobüs ile yolculuk hizmeti veren bir firmanın ve müşterilerinin bağlanabildiği bir sistem
  
