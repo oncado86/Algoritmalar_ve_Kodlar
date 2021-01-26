@@ -1,2 +1,2 @@
-# Algoritmalar_ve_Kodlar
+# Algoritmalar ve Kodlar
  
