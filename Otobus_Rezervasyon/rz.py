@@ -950,11 +950,11 @@ class RZR():
                             RZR.bilgiler.sefer.ekle.secilmis_sefer_no(s)
                             RZR.fnks.rez_olustur()
                     else:
-                        print("hatalı giriş.. Listeden seçiniz..")
+                        print("Hatalı giriş.. Listeden seçiniz..")
                         RZR.fnks.rez_secim()
             else:
-                print("Hiç kayıt yok")
-                # sefer ekleme fnk
+                RZR.fnks.kayit_yok_mstr("Sefer")
+                RZR.menuler.musteri_ekran()
 
         def rez_olustur():
             RZR.fnks.ekran_temizle()
@@ -1164,15 +1164,19 @@ class RZR():
             RZR.fnks.ekran_temizle()
             RZR.fnks.menu_baslik("Rezervasyon Detay")
 
-            rz_lst = RZR.bilgiler.musteri.getir._rez_nolar_lst()
-            print(rz_lst)
-            rz_no = RZR.fnks.rez_no_sor()
-
-            if rz_no in rz_lst:
-                RZR.bilgiler.musteri.getir.bilgi.rez_bilgi(rz_no)
-                a = input("İyi yolculuklar dileriz..")
-                RZR.menuler.musteri_ekran()
+            ss = RZR.bilgiler.sefer.getir._sfr_sayisi()
+            if ss > 0:
+                rz_lst = RZR.bilgiler.musteri.getir._rez_nolar_lst()
+                print(rz_lst)
+                rz_no = RZR.fnks.rez_no_sor()
+                if rz_no in rz_lst:
+                    RZR.bilgiler.musteri.getir.bilgi.rez_bilgi(rz_no)
+                    a = input("İyi yolculuklar dileriz..")
+                    RZR.menuler.musteri_ekran()
+                else:
+                    a = input(
+                        "Eksik ya da hatalı bir giriş yapıldı, lütfen tekrar deneyiniz..")
+                    RZR.menuler.musteri_ekran()
             else:
-                a = input(
-                    "Eksik ya da hatalı bir giriş yapıldı, lütfen tekrar deneyiniz..")
+                RZR.fnks.kayit_yok_mstr("Sefer")
                 RZR.menuler.musteri_ekran()
