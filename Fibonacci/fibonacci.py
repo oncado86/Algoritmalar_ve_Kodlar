@@ -4,7 +4,7 @@ class FB():
         self.tanim = """
 Fibonacci serisinin ilk iki elemanı 1'dir ve diğer elemanları,
 kendisinden önce gelen son iki elemanın toplamıdır.
-Klavyeden bir sayı okuyarak, girilen sayı kadar fibonacci serisinin elemanını ekrana bastıran kodu yazınız.
+Klavyeden bir sayı okuyarak, girilen sayı kadar Fibonacci Serisinin elemanını ekrana bastıran kodu yazınız.
 """
 
     def ekran_temizle(self):
