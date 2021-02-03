@@ -8,7 +8,7 @@ class EBEK():
         print("".center(120, "~"))
 
     def s_al(self):
-        rkm = "-0123456789"
+        rkm = "0123456789"
         s = None
         while not s:
             s = input("Sayı giriniz: ")
