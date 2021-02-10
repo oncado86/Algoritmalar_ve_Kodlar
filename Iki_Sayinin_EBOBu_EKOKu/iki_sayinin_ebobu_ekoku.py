@@ -21,6 +21,19 @@ class EBEK():
                 s = int(s)
                 return s
 
+    # alternatif
+    def s_a():
+        s = ""
+        while not s:
+            s = input("Sayı giriniz: ")
+        else:
+            try:
+                s = int(s)
+                return s
+            except Exception as er:
+                print("Hatalı giriş..")
+                return s_a()
+
     def ebob(self, a, b):
         buyuk, kucuk, kalan = None, None, None
 
@@ -154,7 +167,7 @@ class EBEK():
         self.a_ek()
         scm = self.islem_sec()
         while scm != 3:
-            
+
             self.islemler(scm)
             scm = self.islem_sec()
 
