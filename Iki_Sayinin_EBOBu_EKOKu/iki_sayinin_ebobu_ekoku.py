@@ -2,11 +2,29 @@ class EBEK():
     def __init__(self) -> None:
         pass
 
-    def a_ek(self):
-        print("".center(120, "~"))
-        print("OnCaDo".center(120))
-        print("".center(120, "~"))
+    def et(self):
+        import os
+        if os.name == "nt":
+            _ = os.system("cls")
+        else:
+            _ = os.system("clear")
+        print("".center(109, "~"))
+        print("OnCaDo".center(109))
+        print("".center(109, "~"))
 
+    def s_a(self):
+        s = ""
+        while not s:
+            s = input("Sayı giriniz: ")
+        else:
+            try:
+                s = int(s)
+                return s
+            except Exception as er:
+                print("Hatalı giriş..")
+                return s_a()
+
+    # alternatif
     def s_al(self):
         rkm = "0123456789"
         s = None
@@ -20,19 +38,6 @@ class EBEK():
             else:
                 s = int(s)
                 return s
-
-    # alternatif
-    def s_a():
-        s = ""
-        while not s:
-            s = input("Sayı giriniz: ")
-        else:
-            try:
-                s = int(s)
-                return s
-            except Exception as er:
-                print("Hatalı giriş..")
-                return s_a()
 
     def ebob(self, a, b):
         buyuk, kucuk, kalan = None, None, None
@@ -82,8 +87,8 @@ class EBEK():
 
     def islemler(self, s):
         if s == 1:
-            a = self.s_al()
-            b = self.s_al()
+            a = self.s_a()
+            b = self.s_a()
             ebb = self.ebob(a, b)
             # alternatif
             # eb2 = self.eb2(a, b)
@@ -91,8 +96,8 @@ class EBEK():
 
             print(f"\n{a} ve {b} sayılarının\nEBOB'u: {ebb}")
         elif s == 2:
-            a = self.s_al()
-            b = self.s_al()
+            a = self.s_a()
+            b = self.s_a()
             ebb = self.ebob(a, b)
             ekk = self.ekok(a, b)
             # alternatif
@@ -164,7 +169,7 @@ class EBEK():
             return c
 
     def pro(self):
-        self.a_ek()
+        self.et()
         scm = self.islem_sec()
         while scm != 3:
 
