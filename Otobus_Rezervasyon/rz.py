@@ -9,7 +9,6 @@ class RZR():
 
             class sabit():
 
-                rkm = "0123456789"
                 hexa = ["0", "1", "2", "3", "4",
                         "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
                 abc = "abcçdefgğhıijklmnoöprsştuüvyzABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ"
@@ -465,17 +464,15 @@ class RZR():
     class fnks():
 
         def ekran_temizle():
-            # win
             if os.name == 'nt':
                 _ = os.system('cls')
-            # mac & linux
             else:
                 _ = os.system('clear')
 
         def menu_baslik(menu_adi):
-            print("~".center(100, "~"))
-            print(f"{menu_adi}".center(100))
-            print("~".center(100, "~"))
+            print("~".center(109, "~"))
+            print(f"{menu_adi}".center(109))
+            print("~".center(109, "~"))
 
         def calistir(liste, secim):
             liste[secim]()
@@ -704,43 +701,40 @@ class RZR():
                 while not o_k:
                     o_k = input("Aracın Kapasitesi: ")
                 else:
-                    for i in o_k:
-                        rakamlar = RZR.bilgiler.veri_tabanı.sabit.rkm
-                        if not i in rakamlar:
-                            print("Hatalı giriş yapıldı.. ")
-                            return ot_kapasite()
+                    try:
+                        o_k = int(o_k)
+                        if 24 <= o_k <= 52:
+                            return o_k
                         else:
-                            o_k = int(o_k)
-                            if 24 <= o_k <= 52:
-                                return o_k
-                            else:
-                                print("Kapasite 24-52 olmalıdır..")
-                                return ot_kapasite()
+                            print("Kapasite 24-52 olmalıdır..")
+                            return ot_kapasite()
+
+                    except Exception:
+                        print("Hatalı giriş yapıldı.. ")
+                        return ot_kapasite()
 
             def ot_per_sayi(kapasite):
                 p_sa = None
                 while not p_sa:
                     p_sa = input("Personel Sayısı: ")
                 else:
-                    for i in p_sa:
-                        rakamlar = RZR.bilgiler.veri_tabanı.sabit.rkm
-                        if not i in rakamlar:
-                            print("Hatalı giriş yapıldı..")
-                            return ot_per_sayi(kapasite)
-                        else:
-                            p_sa = int(p_sa)
-                            if 2 <= p_sa <= 3:
-                                if kapasite >= 30:
-                                    if p_sa == 3:
-                                        return p_sa
-                                    else:
-                                        print("Personel sayısı yetersiz..")
-                                        return ot_per_sayi(kapasite)
-                                else:
+                    try:
+                        p_sa = int(p_sa)
+                        if 2 <= p_sa <= 3:
+                            if kapasite >= 30:
+                                if p_sa == 3:
                                     return p_sa
+                                else:
+                                    print("Personel sayısı yetersiz..")
+                                    return ot_per_sayi(kapasite)
                             else:
-                                print("Personel sayısı 2 ya da 3 kişi olmalıdır..")
-                                return ot_per_sayi(kapasite)
+                                return p_sa
+                        else:
+                            print("Personel sayısı 2 ya da 3 kişi olmalıdır..")
+                            return ot_per_sayi(kapasite)
+                    except Exception:
+                        print("Hatalı giriş yapıldı..")
+                        return ot_per_sayi(kapasite)
 
             def ot_mes_bul(kapasite):
                 if kapasite >= 30:
@@ -784,40 +778,36 @@ class RZR():
                 return hx_no
 
             def saat_al(hangi):
-                rkm = RZR.bilgiler.veri_tabanı.sabit.rkm
                 s = None
                 while not s:
                     s = input(f"Sefer {hangi} Saati: ")
                 else:
-                    for i in s:
-                        if i not in rkm:
-                            print("Hatalı giriş..")
-                            return saat_al(hangi)
-                    else:
+                    try:
                         s = int(s)
                         if 0 <= s <= 23:
                             return s
                         else:
                             print("24 Saat dilimi olmalıdır..")
                             return saat_al(hangi)
+                    except Exception:
+                        print("Hatalı giriş..")
+                        return saat_al(hangi)
 
             def dakika_al(hangi):
-                rkm = RZR.bilgiler.veri_tabanı.sabit.rkm
                 s = None
                 while not s:
                     s = input(f"Sefer {hangi} Dakikası: ")
                 else:
-                    for i in s:
-                        if i not in rkm:
-                            print("Hatalı giriş..")
-                            return dakika_al(hangi)
+                    try:
+                        s = int(s)
+                        if 0 <= s <= 59:
+                            return s
                         else:
-                            s = int(s)
-                            if 0 <= s <= 59:
-                                return s
-                            else:
-                                print("24 Saat dilimi olmalıdır")
-                                return dakika_al(hangi)
+                            print("24 Saat dilimi olmalıdır..")
+                            return saat_al(hangi)
+                    except Exception:
+                        print("Hatalı giriş..")
+                        return saat_al(hangi)
 
             def sfr_mesafe_hesapla(bas_sa, bas_dak, bit_sa, bit_dk):
                 b_s, b_d, v_s, v_d = bas_sa, bas_dak, bit_sa, bit_dk
@@ -868,21 +858,19 @@ class RZR():
 
             def ist_has():
                 hslt = None
-                rkm = RZR.bilgiler.veri_tabanı.sabit.rkm
                 while not hslt:
                     hslt = input("İstenilen hasıtlat miktarı: ")
                 else:
-                    for i in hslt:
-                        if not i in rkm:
-                            print("Hatalı giriş yapıldı..")
+                    try:
+                        hslt = int(hslt)
+                        if hslt == 0:
+                            print("Hasılat miktarı 0 olamaz..")
                             return ist_has()
                         else:
-                            hslt = int(hslt)
-                            if hslt == 0:
-                                print("Hasılat miktarı 0 olamaz..")
-                                return ist_has()
-                            else:
-                                return hslt
+                            return hslt
+                    except Exception:
+                        print("Hatalı giriş yapıldı..")
+                        return ist_has()
 
             def kb_ucrt(is_has, o_no):
                 kpst = RZR.bilgiler.oto.getir.ayrinti.kapasite(o_no)
