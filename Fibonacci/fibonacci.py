@@ -13,11 +13,28 @@ Klavyeden bir sayı okuyarak, girilen sayı kadar Fibonacci Serisinin elemanın�
             _ = os.system("cls")
         else:
             _ = os.system("clear")
-        print("".center(120, "~"))
-        print("OnCaDo".center(120))
-        print("".center(120, "~"))
+        print("".center(109, "~"))
+        print("OnCaDo".center(109))
+        print("".center(109, "~"))
 
     def s_al(self):
+        s = None
+        while not s:
+            s = input("Seri adedi: ")
+        else:
+            try:
+                s = int(s)
+                if s != 0:
+                    return s
+                else:
+                    print("0 değeri tanımsız.")
+                    return self.s_al()
+            except Exception as er:
+                print("Hatalı giriş. Lütfen sayı giriniz.")
+                return self.s_al()
+
+    # alternatif
+    def s_al2(self):
         s = None
         rkm = "0123456789"
         while not s:
@@ -30,27 +47,10 @@ Klavyeden bir sayı okuyarak, girilen sayı kadar Fibonacci Serisinin elemanın�
                         return s
                     else:
                         print("0 değeri tanımsız")
-                        return self.s_al()
+                        return self.s_al2()
                 else:
                     print("Lütfen sayı giriniz..")
-                    return self.s_al()
-
-    # alternatif
-    def s_al2(self):
-        s = None
-        while not s:
-            s = input("Seri adedi: ")
-        else:
-            try:
-                s = int(s)
-                if s != 0:
-                return s
-            else:
-                print("0 değeri tanımsız.")
-                return s_al2()
-            except Exception as er:
-                print("Hatalı giriş. Lütfen sayı giriniz.")
-                return s_al2()
+                    return self.s_al2()
 
     def tekrar(self):
         s = ""
