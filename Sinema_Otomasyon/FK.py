@@ -158,7 +158,7 @@ class FK():
 
         if bos_koltuk < 50:
             print(
-                f"\nÖdeme türünü seçiniz.\n1- {self.v.salon.bilet.tur__(self.v.id.ogrenci)} ({self.v.id.ogrenci_ucret} TL)\n2- {self.v.id.tam} ({self.v.id.tam_ucret} TL)")
+                f"\nÖdeme türünü seçiniz.\n1- {self.v.salon.bilet.tur__(self.v.id.ogrenci)} ({self.v.salon.bilet.ucret__(self.v.id.ogrenci_ucret)} TL)\n2- {self.v.salon.bilet.tur__(self.v.id.tam)} ({self.v.salon.bilet.ucret__(self.v.id.tam_ucret)} TL)")
             odeme_sekli = (self.secim_al__(2)-1)
 
             self.v.salon.izleme.artir__(salon_secim, matine_secim, odeme_sekli)
