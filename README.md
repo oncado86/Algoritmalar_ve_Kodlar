@@ -1,4 +1,4 @@
-# Sinema Otomasyonu
+# Sinema Otomasyonu (Katmanlı Mimari/Dosya İşlemleri/Veri Formatlama)
  
 Sinemada 3 farklı salon bulunmaktadır. Bu salonların isimleri RED, GREEN ve BLUE şeklindedir. Bu salonlarda aynı anda 3 farklı film gösterimi yapılmaktadır.
 Her bir sinema salonunda günde beşer adet matine gösterimi yapılmaktadır. Matine isimleri 1,2,3,4 ve 5 şeklinde nümerik rakamlardan oluşmaktadır. Sinema salonlarında günde toplam 15 adet film gösterilmektedir.
