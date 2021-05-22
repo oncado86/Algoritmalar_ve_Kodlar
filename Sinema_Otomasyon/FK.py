@@ -171,7 +171,7 @@ class FK():
 
             print("\n\n----- Rezervasyon Bilgileri -----")
 
-            print(f"--> {self.v.salon.isim__(salon_secim)} salonundaki {matine_secim + 1} matinesinde: {bos_koltuk +1 } numaralı koltuk\n--> Bilet Ücreti: {self.v.salon.bilet.ucret__(odeme_sekli)} ₺.")
+            print(f"--> {self.v.salon.isim__(salon_secim)} salonundaki {matine_secim + 1}. matinede: {bos_koltuk +1 } numaralı koltuk\n--> Bilet Ücreti: {self.v.salon.bilet.ucret__(odeme_sekli)} ₺.")
 
             print("\n\nRezeryasyonunuzu onaylıyor musunuz?\n1- İptal \n2- Evet")
             onay = self.secim_al__(2)
