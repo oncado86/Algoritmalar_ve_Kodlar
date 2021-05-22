@@ -23,7 +23,7 @@ class VERILER():
         self._salon = [self._red, self._green, self._blue]
 
     # ---------------------------- Tanımlamalar
-    @property
+    @property 
     def _sb__toplam_izlenme__ID(self):
         return self._ID[0]
 
@@ -46,6 +46,23 @@ class VERILER():
     @property
     def _sb__toplam_gelir__ID(self):
         return self._ID[5]
+
+    @property
+    def _ogrenci_ID(self):
+        return self._ID[2]
+
+    @property
+    def _ogrenci_ucret_ID(self):
+        return self._ID[0]
+
+    @property
+    def _tam_ID(self):
+        return self._ID[3]
+
+    @property
+    def _tam_ucret_ID(self):
+        return self._ID[1]
+
 
     @property
     def _yok(self):
@@ -103,21 +120,6 @@ class VERILER():
     def _kullanici_sifre_ID(self):
         return self._ID[1]
 
-    @property
-    def _ogrenci_ID(self):
-        return self._ID[2]
-
-    @property
-    def _ogrenci_ucret_ID(self):
-        return self._ID[0]
-
-    @property
-    def _tam_ID(self):
-        return self._ID[3]
-
-    @property
-    def _tam_ucret_ID(self):
-        return self._ID[1]
 
     @property
     def _sifrele_ID(self):

@@ -15,7 +15,7 @@ class MN():
         secim = self.f.secim_al__(3)
         secenek = [self.kayit_ol, self.kullanici_girisi, exit]
 
-        self.f.caslistir__(secenek, secim)
+        self.f.menu_secim__(secenek, secim)
 
     def kayit_ol(self):
         self.f.kayit_ol
@@ -43,7 +43,7 @@ class MN():
         secim = self.f.secim_al__(3)
         secenek = [self.rezervasyon_yap, self.hasilati_gor, exit]
 
-        self.f.caslistir__(secenek, secim)
+        self.f.menu_secim__(secenek, secim)
 
     def rezervasyon_yap(self):
         self.f.rezervasyon_yap

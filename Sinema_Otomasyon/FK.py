@@ -37,7 +37,7 @@ class FK():
         else:
             try:
                 scm = int(scm)-1
-                if 0 <= scm <= snr_dgr:
+                if 0 <= scm <= snr_dgr-1:
                     return scm
                 else:
                     print("\nHatalı giriş..\n")
@@ -149,9 +149,12 @@ class FK():
         3- {self.v.salon.isim__(self.v.id.blue)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.mtr)} Filmi""")
 
         salon_secim = self.secim_al__(3)
+        print(f"\nSeçilen salon: {self.v.salon.isim__(salon_secim)}")
 
         print("\nKaç numaralı matinede rezervasyon yapmak istersiniz? (1/2/3/4/5)")
         matine_secim = self.secim_al__(5)
+
+        print(f"\nSeçilen Matine: {matine_secim+1}")
 
         bos_koltuk = self.v.salon.izleme.bos_koltuk__(
             salon_secim, matine_secim)
@@ -160,8 +163,11 @@ class FK():
             print(
                 f"\nÖdeme türünü seçiniz.\n1- {self.v.salon.bilet.tur__(self.v.id.ogrenci)} ({self.v.salon.bilet.ucret__(self.v.id.ogrenci_ucret)} TL)\n2- {self.v.salon.bilet.tur__(self.v.id.tam)} ({self.v.salon.bilet.ucret__(self.v.id.tam_ucret)} TL)")
             odeme_sekli = (self.secim_al__(2))
+            print(
+                f"\nBelirtilen Ödeme Şekli: {self.v.salon.bilet.tur__(odeme_sekli+2)} {self.v.salon.bilet.ucret__(odeme_sekli)} ₺")
 
-            self.v.salon.izleme.artir__(salon_secim, matine_secim, odeme_sekli)
+            self.v.salon.izleme.artir__(
+                salon_secim, matine_secim, odeme_sekli)
 
             print("\n\nRezervasyon Bilgileri:\n")
             print(f"--> {self.v.salon.isim__(salon_secim)} salonundaki {matine_secim + 1} matinesinde: {bos_koltuk +1 } numaralı koltuk\n--> Bilet Ücreti: {self.v.salon.bilet.ucret__(odeme_sekli)} ₺.")
@@ -191,5 +197,5 @@ class FK():
     def center(self, msj):
         print(msj.center(shutil.get_terminal_size().columns))
 
-    def caslistir__(self,secenel_list,secim):
+    def menu_secim__(self, secenel_list, secim):
         secenel_list[secim]()
