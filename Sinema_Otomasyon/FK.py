@@ -36,8 +36,8 @@ class FK():
             scm = input("\n\t--> ")
         else:
             try:
-                scm = int(scm)
-                if 1 <= scm <= snr_dgr:
+                scm = int(scm)-1
+                if 0 <= scm <= snr_dgr:
                     return scm
                 else:
                     print("\nHatalı giriş..\n")
@@ -148,10 +148,10 @@ class FK():
         2- {self.v.salon.isim__(self.v.id.green)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.lotr)} Filmi
         3- {self.v.salon.isim__(self.v.id.blue)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.mtr)} Filmi""")
 
-        salon_secim = self.secim_al__(3)-1
+        salon_secim = self.secim_al__(3)
 
         print("\nKaç numaralı matinede rezervasyon yapmak istersiniz? (1/2/3/4/5)")
-        matine_secim = self.secim_al__(5)-1
+        matine_secim = self.secim_al__(5)
 
         bos_koltuk = self.v.salon.izleme.bos_koltuk__(
             salon_secim, matine_secim)
@@ -159,7 +159,7 @@ class FK():
         if bos_koltuk < 50:
             print(
                 f"\nÖdeme türünü seçiniz.\n1- {self.v.salon.bilet.tur__(self.v.id.ogrenci)} ({self.v.salon.bilet.ucret__(self.v.id.ogrenci_ucret)} TL)\n2- {self.v.salon.bilet.tur__(self.v.id.tam)} ({self.v.salon.bilet.ucret__(self.v.id.tam_ucret)} TL)")
-            odeme_sekli = (self.secim_al__(2)-1)
+            odeme_sekli = (self.secim_al__(2))
 
             self.v.salon.izleme.artir__(salon_secim, matine_secim, odeme_sekli)
 
@@ -190,3 +190,6 @@ class FK():
 
     def center(self, msj):
         print(msj.center(shutil.get_terminal_size().columns))
+
+    def caslistir__(self,secenel_list,secim):
+        secenel_list[secim]()

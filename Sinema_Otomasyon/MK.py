@@ -13,23 +13,14 @@ class MN():
         self.f.menu_baslik__("Lütfen bir işlem seçiniz.")
         print("\n\n1- Kayıt Ol\n2- Oturum Aç\n3- Çıkış")
         secim = self.f.secim_al__(3)
-        if secim == 1:
-            self.kayit_ol
-        elif secim == 2:
-            self.kullanici_girisi
-        elif secim == 3:
-            exit()
-        else:
-            self.f.mesaj_ver__(
-                "Hatalı giriş, lütfen tekrar deneyiniz..")
-            self.ana_ekran
+        secenek = [self.kayit_ol, self.kullanici_girisi, exit]
 
-    @property
+        self.f.caslistir__(secenek, secim)
+
     def kayit_ol(self):
         self.f.kayit_ol
         self.ana_ekran
 
-    @property
     def kullanici_girisi(self):
         usr = self.f.kullanici_girisi
         if usr == 1:
@@ -41,7 +32,7 @@ class MN():
     def rez_secim(self):
         self.f.e_t
         self.f.menu_baslik__("Lütfen yapmak istediğiniz işlemi seçiniz.")
-        
+
         print(
             f"""Merhaba sayın {self.f.klist[self.f.v.kullanici.id_].upper()},\nYapabileceğiniz işlemler listelendi
             
@@ -50,19 +41,14 @@ class MN():
             3- Çıkış""")
 
         secim = self.f.secim_al__(3)
-        if secim == 1:
-            self.rezervasyon_yap
-        elif secim == 2:
-            self.hasilati_gor
-        else:
-            exit()
+        secenek = [self.rezervasyon_yap, self.hasilati_gor, exit]
 
-    @property
+        self.f.caslistir__(secenek, secim)
+
     def rezervasyon_yap(self):
         self.f.rezervasyon_yap
         self.rez_secim
 
-    @property
     def hasilati_gor(self):
         self.f.hasilati_goster
         s = input("\n\nDevam etmek için ENTER'e tuşa basınız..")
