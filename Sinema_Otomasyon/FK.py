@@ -143,9 +143,9 @@ class FK():
         self.v.genel.verileri_cek
 
         print(f"""
-        1- {self.v.salon.isim__(self.v.id.red)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.star_wars)} Filmi
-        2- {self.v.salon.isim__(self.v.id.green)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.lotr)} Filmi
-        3- {self.v.salon.isim__(self.v.id.blue)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.mtr)} Filmi""")
+        1- Salon: {self.v.salon.isim__(self.v.id.salon_1)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_1)}
+        2- Salon: {self.v.salon.isim__(self.v.id.salon_2)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_2)}
+        3- Salon: {self.v.salon.isim__(self.v.id.salon_3)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_3)}""")
 
         salon_secim = self.secim_al__(3)
         print(

@@ -17,10 +17,10 @@ class VERILER():
         self._kullanicilar = [self._kullanici_ad, self._kullanici_sifre]
         self._u_idsi = None
 
-        self._red = [[], [], [], [], []]
-        self._green = [[], [], [], [], []]
-        self._blue = [[], [], [], [], []]
-        self._salon = [self._red, self._green, self._blue]
+        self._salon_1 = [[], [], [], [], []]
+        self._salon_2 = [[], [], [], [], []]
+        self._salon_3 = [[], [], [], [], []]
+        self._salon = [self._salon_1, self._salon_2, self._salon_3]
 
     # ---------------------------- Tanımlamalar
     @property
@@ -72,27 +72,27 @@ class VERILER():
         return self._ID[1]
 
     @property
-    def _red_ID(self):
+    def _salon_1_ID(self):
         return self._ID[0]
 
     @property
-    def _green_ID(self):
+    def _salon_2_ID(self):
         return self._ID[1]
 
     @property
-    def _blue_ID(self):
+    def _salon_3_ID(self):
         return self._ID[2]
 
     @property
-    def _sw_ID(self):
+    def _film_1_ID(self):
         return self._ID[0]
 
     @property
-    def _ltr_ID(self):
+    def _film_2_ID(self):
         return self._ID[1]
 
     @property
-    def _mtr_ID(self):
+    def _film_3_ID(self):
         return self._ID[2]
 
     @property
@@ -227,9 +227,9 @@ class VERILER():
 
             salon = []
             for i in range(5):
-                self._red[i].clear()
-                self._green[i].clear()
-                self._blue[i].clear()
+                self._salon_1[i].clear()
+                self._salon_2[i].clear()
+                self._salon_3[i].clear()
             with open(self._txt_ad__(self._txt_log_ID)) as d:
                 salon = d.readlines()
             veri.clear()
@@ -238,24 +238,24 @@ class VERILER():
                 veri.append(salon[i].split())
 
             for i in range(5):
-                self._red[i].append(veri[3+i][2])
-                self._red[i].append(veri[3+i][4].replace("(", ""))
-                self._red[i].append(veri[3+i][6])
-                self._red[i].append(veri[3+i][8])
-                self._red[i].append(veri[3+i][10])
-                self._green[i].append(veri[12+i][2])
-                self._green[i].append(veri[12+i][4].replace("(", ""))
-                self._green[i].append(veri[12+i][6])
-                self._green[i].append(veri[12+i][8])
-                self._green[i].append(veri[12+i][10])
-                self._blue[i].append(veri[21+i][2])
-                self._blue[i].append(veri[21+i][4].replace("(", ""))
-                self._blue[i].append(veri[21+i][6])
-                self._blue[i].append(veri[21+i][8])
-                self._blue[i].append(veri[21+i][10])
-            self._red.append(veri[9][4])
-            self._green.append(veri[18][4])
-            self._blue.append(veri[27][4])
+                self._salon_1[i].append(veri[3+i][2])
+                self._salon_1[i].append(veri[3+i][4].replace("(", ""))
+                self._salon_1[i].append(veri[3+i][6])
+                self._salon_1[i].append(veri[3+i][8])
+                self._salon_1[i].append(veri[3+i][10])
+                self._salon_2[i].append(veri[12+i][2])
+                self._salon_2[i].append(veri[12+i][4].replace("(", ""))
+                self._salon_2[i].append(veri[12+i][6])
+                self._salon_2[i].append(veri[12+i][8])
+                self._salon_2[i].append(veri[12+i][10])
+                self._salon_3[i].append(veri[21+i][2])
+                self._salon_3[i].append(veri[21+i][4].replace("(", ""))
+                self._salon_3[i].append(veri[21+i][6])
+                self._salon_3[i].append(veri[21+i][8])
+                self._salon_3[i].append(veri[21+i][10])
+            self._salon_1.append(veri[9][4])
+            self._salon_2.append(veri[18][4])
+            self._salon_3.append(veri[27][4])
         except Exception:
             print("Veriler alınırken bir hata oluştu... \nDosya bozulmuş olabilir..")
             exit()

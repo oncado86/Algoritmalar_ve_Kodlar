@@ -71,28 +71,28 @@ class iD():
         return _v_._sb__tam_gelir__ID
 
     @property
-    def red(self):
-        return _v_._red_ID
+    def salon_1(self):
+        return _v_._salon_1_ID
 
     @property
-    def green(self):
-        return _v_._green_ID
+    def salon_2(self):
+        return _v_._salon_2_ID
 
     @property
-    def blue(self):
-        return _v_._blue_ID
+    def salon_3(self):
+        return _v_._salon_3_ID
 
     @property
-    def star_wars(self):
-        return _v_._sw_ID
+    def film_1(self):
+        return _v_._film_1_ID
 
     @property
-    def lotr(self):
-        return _v_._ltr_ID
+    def film_2(self):
+        return _v_._film_2_ID
 
     @property
-    def mtr(self):
-        return _v_._mtr_ID
+    def film_3(self):
+        return _v_._film_3_ID
 
     @property
     def yaz(self):
@@ -151,9 +151,9 @@ class Bilet():
 class Izleme():
     def __init__(self) -> None:
         # Develped by OnCaDo
-        self.red = Red_Izlenme()
-        self.green = Green_Izlenme()
-        self.blue = Blue_Izlenme()
+        self.salon_1 = salon_1_izlenme()
+        self.salon_2 = salon_2_izlenme()
+        self.salon_3 = salon_3_izlenme()
 
     def artir__(self, salon_ID, matine_bilgisi, odeme_sekli):
         # toplam izleme
@@ -187,106 +187,106 @@ class Izleme():
         return _v_._salon_bilgisi_getir__(salon_ID, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
 
 
-class Red_Izlenme():
+class salon_1_izlenme():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.red, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_1, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.red, matine_bilgisi, _v_._sb__tam_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_1, matine_bilgisi, _v_._sb__tam_izleme__ID)
 
     def toplam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.red, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_1, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
 
 
-class Green_Izlenme():
+class salon_2_izlenme():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.green, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_2, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.green, matine_bilgisi, _v_._sb__tam_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_2, matine_bilgisi, _v_._sb__tam_izleme__ID)
 
     def toplam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.green, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_2, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
 
 
-class Blue_Izlenme():
+class salon_3_izlenme():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.blue, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_3, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.blue, matine_bilgisi, _v_._sb__tam_izleme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_3, matine_bilgisi, _v_._sb__tam_izleme__ID)
 
     def toplam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_.blue, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
+        return _v_._salon_bilgisi_getir__(_v_.salon_3, matine_bilgisi, _v_._sb__toplam_izlenme__ID)
 
 
 #------------------------- GELIR
 class Gelir():
     def __init__(self) -> None:
         # Develped by OnCaDo
-        self.red = Red_Gelir()
-        self.green = Green_Gelir()
-        self.blue = Blue_Gelir()
+        self.salon_1 = salon_1_gelir()
+        self.salon_2 = salon_2_gelir()
+        self.salon_3 = salon_3_gelir()
 
     def toplam(self):
-        return _v_._salon_bilgisi_getir__(_v_._red_ID, 0, _v_._sb__toplam_gelir__ID) + _v_._salon_bilgisi_getir__(_v_._green_ID, 0, _v_._sb__toplam_gelir__ID) + _v_._salon_bilgisi_getir__(_v_._blue_ID, 0, _v_._sb__toplam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_1_ID, 0, _v_._sb__toplam_gelir__ID) + _v_._salon_bilgisi_getir__(_v_._salon_2_ID, 0, _v_._sb__toplam_gelir__ID) + _v_._salon_bilgisi_getir__(_v_._salon_3_ID, 0, _v_._sb__toplam_gelir__ID)
 
 
-class Red_Gelir():
+class salon_1_gelir():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._red_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_1_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._red_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_1_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
 
     def toplam(self):
-        return _v_._salon_bilgisi_getir__(_v_._red_ID, 0, _v_._sb__toplam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_1_ID, 0, _v_._sb__toplam_gelir__ID)
 
 
-class Green_Gelir():
+class salon_2_gelir():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._green_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_2_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._green_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_2_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
 
     def toplam(self):
-        return _v_._salon_bilgisi_getir__(_v_._green_ID, 0, _v_._sb__toplam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_2_ID, 0, _v_._sb__toplam_gelir__ID)
 
 
-class Blue_Gelir():
+class salon_3_gelir():
     def __init__(self) -> None:
         # Develped by OnCaDo
         pass
 
     def ogrenci__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._blue_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_3_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID)
 
     def tam__(self, matine_bilgisi):
-        return _v_._salon_bilgisi_getir__(_v_._blue_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_3_ID, matine_bilgisi, _v_._sb__tam_gelir__ID)
 
     def toplam(self):
-        return _v_._salon_bilgisi_getir__(_v_._blue_ID, 0, _v_._sb__toplam_gelir__ID)
+        return _v_._salon_bilgisi_getir__(_v_._salon_3_ID, 0, _v_._sb__toplam_gelir__ID)
 
 
 #------------------------- KULLANICI
