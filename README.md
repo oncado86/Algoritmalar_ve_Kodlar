@@ -24,6 +24,6 @@ User information will be saved to the file with a simple encryption and used dur
 ![sm2](https://user-images.githubusercontent.com/77399565/119230205-eda20580-bb23-11eb-8842-868b24d4a8b3.png)
 ![sm3](https://user-images.githubusercontent.com/77399565/119230206-ee3a9c00-bb23-11eb-92a5-17cdab00a2b4.png)
 ![sm4](https://user-images.githubusercontent.com/77399565/119230207-eed33280-bb23-11eb-9f33-ec0ff13a7e21.png)
-![sm5](https://user-images.githubusercontent.com/77399565/119230209-ef6bc900-bb23-11eb-9e98-f07d5310195f.png)
+![sm5](https://user-images.githubusercontent.com/77399565/119233823-6492ca80-bb33-11eb-937b-ef71c8dba2e2.png)
 ![sm6](https://user-images.githubusercontent.com/77399565/119230210-ef6bc900-bb23-11eb-87d0-0108c65cc643.png)
 
