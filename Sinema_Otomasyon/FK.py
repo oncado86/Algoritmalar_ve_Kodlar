@@ -54,18 +54,17 @@ class FK():
     def ilk_acilis(self):
         if self.v.kullanici.sayisi < 1:
             self.e_t
-            msj = """Programı ilk defa kullanıyorsunuz. Kullanıcı oluşturmalısınız.
-            """
-            self.mesaj_ver__(msj)
+            self.mesaj_ver__(
+                "Programı ilk defa kullanıyorsunuz. Kullanıcı oluşturmalısınız.")
             ad, sif = None, None
             while not ad:
                 ad = input("\nKullanıcı adı: ")
 
             while not sif:
-                sif = input("\nŞifreniz: ")
+                sif = input("Şifreniz: ")
             self.kullanici_ekle__(ad, sif)
             self.mesaj_ver__(
-                "Kayıt işlemi başarılı.\nYönlendiriliyorsunuz..")
+                "Kayıt işlemi başarılı...")
 
     def usr_kntrl__(self, user):
         usr = self.v.id.yok
@@ -98,15 +97,15 @@ class FK():
                     sf = input("Şifre: ")
                 self.kullanici_ekle__(ad, sf)
                 self.mesaj_ver__(
-                    "Kayıt işlemi başarılı. Yönlendiriliyorsunuz..")
+                    "Kayıt işlemi başarılı..")
                 # ana ekrana git
             else:
                 self.mesaj_ver__(
-                    "Böyle bir kullanıcı bulunmakta. Yönlendiriliyorsunuz..")
+                    "Böyle bir kullanıcı bulunmakta...")
                 # ana ekrana git
         else:
             self.mesaj_ver__(
-                "KULLANICI SINIRINA ULAŞILDI!!\nÜcretsiz sürüm 10 adet kullanıcıyı desteklemektedir.\nLütfen yetkiliyle görüşün.")
+                "KULLANICI SINIRINA ULAŞILDI!! Ücretsiz sürüm 10 adet kullanıcıyı desteklemektedir. Lütfen yetkiliyle görüşün.")
             # ana ekrana git
 
     @property
@@ -115,7 +114,7 @@ class FK():
         self.v.genel.verileri_cek
         ad, sf = None, None
         while not ad:
-            ad = input("Kullanıcı Adı: ")
+            ad = input("\nKullanıcı Adı: ")
 
         u = self.usr_kntrl__(ad)
         if u == self.v.id.var:
@@ -124,17 +123,17 @@ class FK():
 
             if sf == self.slist[self.v.kullanici.id_]:
                 self.mesaj_ver__(
-                    "Giriş başarılı.. Yönlediriliyorsunuz..")
+                    "Giriş başarılı..")
                 return self.v.id.var
 
             else:
                 self.mesaj_ver__(
-                    "Kullanıcı adı ya da şifre yanlış. Yönlediriliyorsunuz..")
+                    "Kullanıcı adı ya da şifre yanlış...")
                 return self.v.id.yok
 
         else:
             self.mesaj_ver__(
-                "Böyle bir kullanıcı yok. Yönlediriliyorsunuz..")
+                "Böyle bir kullanıcı yok..")
             return self.v.id.yok
 
     @property
@@ -149,7 +148,8 @@ class FK():
         3- {self.v.salon.isim__(self.v.id.blue)} Salonu\t\t-> {self.v.salon.film_ismi__(self.v.id.mtr)} Filmi""")
 
         salon_secim = self.secim_al__(3)
-        print(f"\nSeçilen salon: {self.v.salon.isim__(salon_secim)}")
+        print(
+            f"\nSeçilen salon & film: {self.v.salon.isim__(salon_secim)} ->> {self.v.salon.film_ismi__(salon_secim)}")
 
         print("\nKaç numaralı matinede rezervasyon yapmak istersiniz? (1/2/3/4/5)")
         matine_secim = self.secim_al__(5)
@@ -169,13 +169,21 @@ class FK():
             self.v.salon.izleme.artir__(
                 salon_secim, matine_secim, odeme_sekli)
 
-            print("\n\nRezervasyon Bilgileri:\n")
+            print("\n\n----- Rezervasyon Bilgileri -----")
+
             print(f"--> {self.v.salon.isim__(salon_secim)} salonundaki {matine_secim + 1} matinesinde: {bos_koltuk +1 } numaralı koltuk\n--> Bilet Ücreti: {self.v.salon.bilet.ucret__(odeme_sekli)} ₺.")
-            sleep(2)
-            self.v.genel.verileri_kaydet
-            print("\nRezervasyonunuz Başarıyla gerçekleştirildi.\nİyi seyirler Dileriz.")
+
+            print("\n\nRezeryasyonunuzu onaylıyor musunuz?\n1- İptal \n2- Evet")
+            onay = self.secim_al__(2)
+            if onay == self.v.id.yok:
+                self.mesaj_ver__("Rezervasyon İptal ediledi.")
+
+            else:
+                self.v.genel.verileri_kaydet
+                self.mesaj_ver__(
+                    "Rezervasyonunuz Başarıyla gerçekleştirildi. İyi seyirler Dileriz.")
         else:
-            self.mesaj_ver__("\nBu matinede boş koltuk kalmadı..\n")
+            self.mesaj_ver__("Bu matinede boş koltuk kalmadı..")
 
     @property
     def hasilati_goster(self):

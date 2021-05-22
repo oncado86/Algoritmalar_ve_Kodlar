@@ -3,6 +3,7 @@ from VK import VERILER
 _v_ = VERILER()
 
 
+#------------------------- GENEL
 class Genel():
     def __init__(self) -> None:
         # Develped by OnCaDo
@@ -31,6 +32,7 @@ class Genel():
         return _v_._kripto__(metin, _v_._cozumle_ID, ilerleme)
 
 
+#------------------------- ID
 class iD():
     def __init__(self) -> None:
         # Develped by OnCaDo
@@ -287,6 +289,7 @@ class Blue_Gelir():
         return _v_._salon_bilgisi_getir__(_v_._blue_ID, 0, _v_._sb__toplam_gelir__ID)
 
 
+#------------------------- KULLANICI
 class Kullanici():
     def __init__(self) -> None:
         # Develped by OnCaDo
@@ -315,6 +318,7 @@ class Kullanici():
         _v_._user_id = ID
 
 
+#------------------------- SALON
 class Salon():
     def __init__(self) -> None:
         # Develped by OnCaDo
