@@ -20,10 +20,9 @@ An empty seat will be assigned to the incoming audience according to the hall in
 Thanks to the program, information such as revenue, number of viewers can be followed and up-to-date data can be recorded in the file.
 User information will be saved to the file with a simple encryption and used during logging into the program.
 
-![sm1](https://user-images.githubusercontent.com/77399565/119230204-ed096f00-bb23-11eb-9b04-7ae1ea782857.png)
-![sm2](https://user-images.githubusercontent.com/77399565/119230205-eda20580-bb23-11eb-8842-868b24d4a8b3.png)
-![sm3](https://user-images.githubusercontent.com/77399565/119230206-ee3a9c00-bb23-11eb-92a5-17cdab00a2b4.png)
-![sm4](https://user-images.githubusercontent.com/77399565/119230207-eed33280-bb23-11eb-9f33-ec0ff13a7e21.png)
-![sm5](https://user-images.githubusercontent.com/77399565/119233823-6492ca80-bb33-11eb-937b-ef71c8dba2e2.png)
-![sm6](https://user-images.githubusercontent.com/77399565/119230210-ef6bc900-bb23-11eb-87d0-0108c65cc643.png)
+![sm1](https://user-images.githubusercontent.com/77399565/119551870-c5740a00-bda2-11eb-98bd-144f6dc8e5a3.png)
+![sm2](https://user-images.githubusercontent.com/77399565/119551873-c60ca080-bda2-11eb-8eac-82623b06e776.png)
+![sm3](https://user-images.githubusercontent.com/77399565/119551877-c6a53700-bda2-11eb-9f78-6becb56177b0.png)
+![sm4](https://user-images.githubusercontent.com/77399565/119551880-c73dcd80-bda2-11eb-892f-4a55effe3cb7.png)
+![sm5](https://user-images.githubusercontent.com/77399565/119551882-c7d66400-bda2-11eb-98f8-a5bd2f1ce333.png)
 
