@@ -98,15 +98,12 @@ class FK():
                 self.kullanici_ekle__(ad, sf)
                 self.mesaj_ver__(
                     "Kayıt işlemi başarılı..")
-                # ana ekrana git
             else:
                 self.mesaj_ver__(
                     "Böyle bir kullanıcı bulunmakta...")
-                # ana ekrana git
         else:
             self.mesaj_ver__(
                 "KULLANICI SINIRINA ULAŞILDI!! Ücretsiz sürüm 10 adet kullanıcıyı desteklemektedir. Lütfen yetkiliyle görüşün.")
-            # ana ekrana git
 
     @property
     def kullanici_girisi(self):
@@ -146,19 +143,14 @@ class FK():
         1- Salon: {self.v.salon.isim__(self.v.id.salon_1)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_1)}
         2- Salon: {self.v.salon.isim__(self.v.id.salon_2)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_2)}
         3- Salon: {self.v.salon.isim__(self.v.id.salon_3)}\t\t-> Film: {self.v.salon.film_ismi__(self.v.id.film_3)}""")
-
         salon_secim = self.secim_al__(3)
         print(
             f"\nSeçilen salon & film: {self.v.salon.isim__(salon_secim)} ->> {self.v.salon.film_ismi__(salon_secim)}")
-
         print("\nKaç numaralı matinede rezervasyon yapmak istersiniz? (1/2/3/4/5)")
         matine_secim = self.secim_al__(5)
-
         print(f"\nSeçilen Matine: {matine_secim+1}")
-
         bos_koltuk = self.v.salon.izleme.bos_koltuk__(
             salon_secim, matine_secim)
-
         if bos_koltuk < 50:
             print(
                 f"\nÖdeme türünü seçiniz.\n1- {self.v.salon.bilet.tur__(self.v.id.ogrenci)} ({self.v.salon.bilet.ucret__(self.v.id.ogrenci_ucret)} TL)\n2- {self.v.salon.bilet.tur__(self.v.id.tam)} ({self.v.salon.bilet.ucret__(self.v.id.tam_ucret)} TL)")
@@ -194,7 +186,6 @@ class FK():
     @property
     def cozumle(self):
         klist = []
-
         for i in self.v.kullanici.listesi[0]:
             klist.append(self.v.genel.cozumle__(i))
         slist = []

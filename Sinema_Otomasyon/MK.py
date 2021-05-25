@@ -9,12 +9,10 @@ class MN():
     @property
     def ana_ekran(self):
         self.f.ana_ekran
-
         self.f.menu_baslik__("Lütfen bir işlem seçiniz.")
         print("\n\n1- Kayıt Ol\n2- Oturum Aç\n3- Çıkış")
         secim = self.f.secim_al__(3)
         secenek = [self.kayit_ol, self.kullanici_girisi, exit]
-
         self.f.menu_secim__(secenek, secim)
 
     def kayit_ol(self):
@@ -32,17 +30,14 @@ class MN():
     def rez_secim(self):
         self.f.e_t
         self.f.menu_baslik__("Lütfen yapmak istediğiniz işlemi seçiniz.")
-
         print(
             f"""Merhaba sayın {self.f.klist[self.f.v.kullanici.id_].upper()},\nYapabileceğiniz işlemler listelendi
             
             1- Rezervasyon Yap
             2- Hasılatı Gör
             3- Çıkış""")
-
         secim = self.f.secim_al__(3)
         secenek = [self.rezervasyon_yap, self.hasilati_gor, exit]
-
         self.f.menu_secim__(secenek, secim)
 
     def rezervasyon_yap(self):

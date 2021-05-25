@@ -158,20 +158,17 @@ class Izleme():
     def artir__(self, salon_ID, matine_bilgisi, odeme_sekli):
         # toplam izleme
         _v_._bilgi_guncelle__(salon_ID, matine_bilgisi, _v_._sb__toplam_izlenme__ID, _v_._salon_bilgisi_getir__(
-            salon_ID, matine_bilgisi, _v_._sb__toplam_izlenme__ID)+1)
-
+            salon_ID, matine_bilgisi, _v_._sb__toplam_izlenme__ID)+1)            
         if odeme_sekli == 0:
             # toplam gelir
             _v_._bilgi_guncelle__(salon_ID, 0, _v_._sb__toplam_gelir__ID,
                                   _v_._salon_bilgisi_getir__(salon_ID, 0, _v_._sb__toplam_gelir__ID) + _v_._bilet_bilgisi__(_v_._ogrenci_ucret_ID))
-
             # ogrenci izlenme
             _v_._bilgi_guncelle__(salon_ID, matine_bilgisi, _v_._sb__ogrenci_izleme__ID,
                                   _v_._salon_bilgisi_getir__(salon_ID, matine_bilgisi, _v_._sb__ogrenci_izleme__ID)+1)
             # ogrenci gelir
             _v_._bilgi_guncelle__(salon_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID,
                                   _v_._salon_bilgisi_getir__(salon_ID, matine_bilgisi, _v_._sb__ogrenci_gelir__ID) + _v_._bilet_bilgisi__(_v_._ogrenci_ucret_ID))
-
         else:
             # toplam gelir
             _v_._bilgi_guncelle__(salon_ID, 0, _v_._sb__toplam_gelir__ID,

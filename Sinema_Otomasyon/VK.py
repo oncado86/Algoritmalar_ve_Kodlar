@@ -6,17 +6,13 @@ class VERILER():
         self._txt_modlar = ("w+", "a+")
         self._txt_isimler = ("sifre.txt", "log.txt")
         self._ID = (0, 1, 2, 3, 4, 5)
-
         self._abc = (
             "a0Ab1Bc2Cç3Çd4De5Ef6Fg7Gğ8Ğh9Hı.Ii,İj'Jk+Kl-Lm/Mn\\No*Oö%Öp&Pr(Rs)Sş=Şt?Tu$Uü{Üv[Vy]Yz}Zq~Qw<W>|:; ")
-
         self._bilet_bilgi = (20, 30, "Öğrenci", "Tam")
-
         self._kullanici_ad = []
         self._kullanici_sifre = []
         self._kullanicilar = [self._kullanici_ad, self._kullanici_sifre]
         self._u_idsi = None
-
         self._salon_1 = [[], [], [], [], []]
         self._salon_2 = [[], [], [], [], []]
         self._salon_3 = [[], [], [], [], []]
@@ -155,7 +151,6 @@ class VERILER():
         if not os.path.exists(self._txt_ad__(self._txt_sifre_ID)):
             with open(self._txt_ad__(self._txt_sifre_ID), self._mod_turu__(self._yaz_ID)) as d:
                 pass
-
         if not os.path.exists(self._txt_ad__(self._txt_log_ID)):
             log = ["""~~~~~~~~~~~~~~~~~~~~~~OnCaDo~~~~~~~~~~~~~~~~~~~~~~"""]
             for i in range(3):
@@ -167,7 +162,6 @@ class VERILER():
                 log.append(
                     f"""\n\n{self._salon_adlar[i]} salonunun toplam geliri: 0 ₺""")
             log.append("""\n\nToplam Hasılat: 0 ₺""")
-
             with open(self._txt_ad__(self._txt_log_ID), self._mod_turu__(self._yaz_ID)) as d:
                 for i in range(len(log)):
                     d.writelines(log[i])
@@ -224,7 +218,6 @@ class VERILER():
                 usr, pas = x[0], x[1]
                 self._kullanicilar[self._kullanici_ad_ID].append(usr)
                 self._kullanicilar[self._kullanici_sifre_ID].append(pas)
-
             salon = []
             for i in range(5):
                 self._salon_1[i].clear()
@@ -233,10 +226,8 @@ class VERILER():
             with open(self._txt_ad__(self._txt_log_ID)) as d:
                 salon = d.readlines()
             veri.clear()
-
             for i in range(len(salon)):
                 veri.append(salon[i].split())
-
             for i in range(5):
                 self._salon_1[i].append(veri[3+i][2])
                 self._salon_1[i].append(veri[3+i][4].replace("(", ""))
