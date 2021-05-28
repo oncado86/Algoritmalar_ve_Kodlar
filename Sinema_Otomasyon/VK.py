@@ -163,8 +163,7 @@ class VERILER():
                     f"""\n\n{self._salon_adlar[i]} salonunun toplam geliri: 0 ₺""")
             log.append("""\n\nToplam Hasılat: 0 ₺""")
             with open(self._txt_ad__(self._txt_log_ID), self._mod_turu__(self._yaz_ID)) as d:
-                for i in range(len(log)):
-                    d.writelines(log[i])
+                d.writelines(log)
 
     @property
     def _verileri_goster(self):
@@ -183,7 +182,7 @@ class VERILER():
                                                   j, self._sb__toplam_gelir__ID)
         log.append(f"\n\nToplam Hasılat: {toplam} ₺")
         for i in range(len(log)):
-            print(log[i])
+            print(log[i],end="")
 
     @property
     def _verileri_kaydet(self):
@@ -201,8 +200,7 @@ class VERILER():
                                                   j, self._sb__toplam_gelir__ID)
         log.append(f"\n\nToplam Hasılat: {toplam} ₺")
         with open(self._txt_ad__(self._txt_log_ID), self._mod_turu__(self._yaz_ID)) as d:
-            for i in range(len(log)):
-                d.writelines(log[i])
+            d.writelines(log)
 
     @property
     def _verileri_cek(self):
