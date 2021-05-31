@@ -182,7 +182,7 @@ class VERILER():
                                                   j, self._sb__toplam_gelir__ID)
         log.append(f"\n\nToplam Hasılat: {toplam} ₺")
         for i in range(len(log)):
-            print(log[i],end="")
+            print(log[i], end="")
 
     @property
     def _verileri_kaydet(self):

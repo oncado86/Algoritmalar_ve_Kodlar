@@ -158,11 +158,7 @@ class FK():
             print(
                 f"\nBelirtilen Ödeme Şekli: {self.v.salon.bilet.tur__(odeme_sekli+2)} {self.v.salon.bilet.ucret__(odeme_sekli)} ₺")
 
-            self.v.salon.izleme.artir__(
-                salon_secim, matine_secim, odeme_sekli)
-
             print("\n\n----- Rezervasyon Bilgileri -----")
-
             print(f"--> {self.v.salon.isim__(salon_secim)} salonundaki {matine_secim + 1}. matinede: {bos_koltuk +1 } numaralı koltuk\n--> Bilet Ücreti: {self.v.salon.bilet.ucret__(odeme_sekli)} ₺.")
 
             print("\n\nRezeryasyonunuzu onaylıyor musunuz?\n1- İptal \n2- Evet")
@@ -171,6 +167,8 @@ class FK():
                 self.mesaj_ver__("Rezervasyon İptal ediledi.")
 
             else:
+                self.v.salon.izleme.artir__(
+                    salon_secim, matine_secim, odeme_sekli)
                 self.v.genel.verileri_kaydet
                 self.mesaj_ver__(
                     "Rezervasyonunuz Başarıyla gerçekleştirildi. İyi seyirler Dileriz.")
