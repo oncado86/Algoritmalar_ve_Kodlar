@@ -1,4 +1,9 @@
 # Algoritmalar ve Kodlar
+
+<div align="left">
+<img alt="GitHub" src="https://img.shields.io/github/license/oncado86/oncado86"/>
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=oncado86.Algoritmalar_ve_Kodlar&right_color=lightgrey&format=true&left_text=My%20Page%20Visitors"></div>
+<hr>
  
 Burada algoritmalar ve bu algoritmalar için uygun kod örnekleri verilecektir.
 Lütfen yukarıda bulunan "_ALGORITMALAR_" başlığı altından bir algoritma seçiniz.
